@@ -34,3 +34,5 @@ parts
 pip-log.txt
 sdist
 var
+pkg/
+tmp/
