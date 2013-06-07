@@ -33,6 +33,9 @@ To get a list of installed styles:
 
 The language mapping dictionary is generated from Pygment's lexer mapping.
 
+## TODO
+
+* For files without extensions examine the first line for a shebang, if present, determine file type from that
 ## SEE ALSO
 
 * [colout](https://github.com/nojhan/colout)
