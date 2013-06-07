@@ -1,5 +1,8 @@
 *.egg
 *.egg-info
+*.iml
+*.ipr
+*.iws
 *.mo
 *.py[cod]
 *.so
@@ -13,6 +16,7 @@
 .Trashes
 ._*
 .coverage
+.idea/
 .installed.cfg
 .mr.developer.cfg
 .netrwhist
@@ -32,7 +36,7 @@ lib64
 nosetests.xml
 parts
 pip-log.txt
-sdist
-var
 pkg/
+sdist
 tmp/
+var
