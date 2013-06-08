@@ -4,6 +4,7 @@
 
 import collections
 import re
+import operator
 
 # this is stolen directly from pygment's lexers/_mappings.py generated file
 # and used to create a mapping between language and file extensions
@@ -612,7 +613,7 @@ def extract_extensions(value):
 
 
 def clean_extension(extension):
-   return re.sub(r'^\*', '', extension)
+    return re.sub(r'^\*', '', extension)
 
 
 if __name__ == '__main__':
@@ -624,7 +625,13 @@ if __name__ == '__main__':
         pairs.extend(map(lambda ext: {ext: extract_language(value)}, exts))
 
     duplicate_extensions = get_duplicates(extensions)
+    duplicates = []
+    for item in pairs:
+        for ext in duplicate_extensions:
+            if ext == item.keys()[0]:
+                duplicates.append((item.values()[0], ext))
+    # for pair in pairs:
+    #     print pair
 
-    for pair in pairs:
-        print pair
-
+    for item in sorted(duplicates, key=lambda duplicate: duplicate[1]):
+        print item
