@@ -9,10 +9,10 @@ class TestLanguageAssociation(TestCase):
         self.subject = LanguageAssociation()
 
     def test__call__when_extension_exists(self):
-        assert self.subject(".py") == "Python"
+        assert self.subject("file.py") == "Python"
 
     def test__call__when_extension_does_not_exist_returns_text_only(self):
-        assert self.subject(".nonexistent-ext") == DEFAULT_LANGUAGE
+        assert self.subject("file.nonexistent-ext") == DEFAULT_LANGUAGE
 
 
 
