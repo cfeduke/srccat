@@ -17,5 +17,8 @@ class TestLanguageAssociation(TestCase):
     def test__call__when_filename_is_extension(self):
         assert self.subject("gvimrc") == "VimL"
 
+    def test__call__when_extension_only(self):
+        assert self.subject(".vimrc") == "VimL"
+
 
 
