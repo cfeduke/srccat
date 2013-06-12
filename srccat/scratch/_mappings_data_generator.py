@@ -633,5 +633,48 @@ if __name__ == '__main__':
     # for pair in pairs:
     #     print pair
 
-    for item in sorted(duplicates, key=lambda duplicate: duplicate[1]):
-        print item
+    # for item in sorted(duplicates, key=lambda duplicate: duplicate[1]):
+    #     print "'%s': '%s'," % (item[1], item[0])
+
+    disambiguation = {
+        '.G': 'ANTLR With CPP Target',
+        '.S': 'S',
+        '.as': 'ActionScript',
+        '.asax': 'aspx-cs',
+        '.ascx': 'aspx-cs',
+        '.ashx': 'aspx-cs',
+        '.asmx': 'aspx-cs',
+        '.aspx': 'aspx-cs',
+        '.axd': 'aspx-cs',
+        '.bas': 'VB.net',
+        '.bug': 'BUGS',
+        '.g': 'ANTLR With CPP Target',
+        '.h': 'C',
+        '.hh': 'C++',
+        '.html': 'HTML',
+        '.inc': 'PHP',
+        '.m': 'Objective-C',
+        '.pl': 'Perl',
+        '.pm': 'Perl',
+        '.pro': 'IDL',
+        '.rl': 'Embedded Ragel',
+        '.s': 'GAS',
+        '.txt': 'Text only',
+        '.v': 'Coq',
+        '.xml': 'XML',
+        '.xsl': 'XSLT',
+        '.xslt': 'XSLT',
+    }
+
+    reverse_index = {}
+    for pair in pairs:
+        extensions, language = pair.keys(), pair.values()[0]
+        extensions = filter(lambda ext: not ext in disambiguation.keys(), extensions)
+        for extension in extensions:
+            reverse_index[extension] = language
+
+    reverse_index.update(disambiguation)
+
+    for key, value in sorted(reverse_index.iteritems(), key=lambda (k,v): (k,v)):
+        print "%s: %s" % (key, value)
+
