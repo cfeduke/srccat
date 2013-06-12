@@ -687,7 +687,7 @@ EXTENSION_LANGUAGE_INDEX = {
     dict_file.write(header)
 
     for key, value in sorted(reverse_index.iteritems(), key=lambda (k, v): (k, v)):
-        dict_file.write("\t\"%s\": \"%s\",\n" % (key, value))
+        dict_file.write("    \"%s\": \"%s\",\n" % (key, value))
 
     dict_file.write("}\n")
     dict_file.close()
