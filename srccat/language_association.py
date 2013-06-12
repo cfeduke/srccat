@@ -3,6 +3,7 @@ import os.path
 
 DEFAULT_LANGUAGE = "Text only"
 
+
 class LanguageAssociation:
     def __init__(self):
         pass

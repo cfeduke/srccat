@@ -4,7 +4,6 @@ from srccat.language_association import LanguageAssociation, DEFAULT_LANGUAGE
 
 class TestLanguageAssociation(TestCase):
 
-
     def setUp(self):
         self.subject = LanguageAssociation()
 
@@ -19,6 +18,9 @@ class TestLanguageAssociation(TestCase):
 
     def test__call__when_extension_only(self):
         assert self.subject(".vimrc") == "VimL"
+
+    def test__call__when_extension_only_2(self):
+        assert self.subject(".rb") == "Ruby"
 
 
 
