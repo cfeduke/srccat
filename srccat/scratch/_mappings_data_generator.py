@@ -675,6 +675,6 @@ if __name__ == '__main__':
 
     reverse_index.update(disambiguation)
 
-    for key, value in sorted(reverse_index.iteritems(), key=lambda (k,v): (k,v)):
+    for key, value in sorted(reverse_index.iteritems(), key=lambda (k, v): (k, v)):
         print "%s: %s" % (key, value)
 
