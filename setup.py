@@ -20,9 +20,9 @@ requires = ['colout']
 
 setup(
     name='srccat',
-    version='0.1',
+    version='0.3',
     description='Syntax highlights source code to terminal using colout',
-    long_description=open('README.md').read(),
+    long_description='',
     author='cfeduke',
     author_email='charles.feduke@gmail.com',
     url='http://cfeduke.github.com/srccat/',
@@ -32,6 +32,6 @@ setup(
     scripts=['bin/srccat'],
     include_package_data=True,
     install_requires=requires,
-    license=open('LICENSE').read(),
+    license='GPL',
     zip_safe=False,
 )
