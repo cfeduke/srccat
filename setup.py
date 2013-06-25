@@ -20,7 +20,7 @@ requires = ['colout']
 
 setup(
     name='srccat',
-    version='0.3',
+    version='0.3.1',
     description='Syntax highlights source code to terminal using colout',
     long_description='',
     author='cfeduke',
